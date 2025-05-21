@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prueba técnica</title>
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <h1>Employee Grid</h1>
+
+  <button class="primaryButton" id="addEmployeeBtn">➕ Agregar Empleado</button>
+  <button class="secondaryButton" id="deleteSelectedBtn" disabled>🗑 Eliminar Seleccionados</button>
+
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th><input type="checkbox" id="selectAll" /></th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Date of birth</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Modal para formulario -->
+  <div id="employeeModal" class="modal hidden">
+    <form id="employeeForm">
+      <h2 id="formTitle">Agregar Empleado</h2>
+      <input type="hidden" id="employeeId" />
+
+      <label>Name *</label>
+      <input type="text" id="name" required maxlength="100" placeholder="Name" />
+
+      <label>Surname</label>
+      <input type="text" id="surname" placeholder="Surname"/>
+
+      <label>Date of birth *</label>
+      <input type="date" id="dob" required placeholder="Date of birth"/>
+
+      <label>Email *</label>
+      <input type="email" id="email" required placeholder="Email"/>
+
+      <label>Role *</label>
+      <select id="roleId" required>
+        <option value="0">Seleccione un rol</option>
+        <option value="1">Desarrollador 🧑‍💻</option>
+        <option value="2">Team Leader 👨‍🏫</option>
+        <option value="3">CTO 🧠</option>
+      </select>
+
+      <div class="form-buttons">
+        <button class='secondaryButton' type="button" id="cancelBtn">Cancelar</button>
+        <button class='primaryButton' type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
